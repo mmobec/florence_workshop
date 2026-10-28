@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: "3.12"
  
-      - run: pip install jupyterlite-core "jupyterlite-pyodide-kernel[lock]" jupyter-server scentree pyomo highspy
+      - run: pip install "jupyterlite-core==0.6.0" "jupyterlite-pyodide-kernel[lock]==0.6.0" jupyter-server
 
       - run: jupyter lite build --contents contents --output-dir _output
 
