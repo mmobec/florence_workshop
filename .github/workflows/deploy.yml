@@ -19,23 +19,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # 1. Configurar Micromamba instalando de forma nativa jupyterlite
       - uses: mamba-org/setup-micromamba@v2
         with:
           micromamba-version: "latest"
+          init-shell: bash
+          create-args: >-
+            python=3.11
+            jupyterlite-core=0.8.6
+            jupyterlite-xeus
+            jupyter-server
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - run: |
-          pip install "jupyterlite-core==0.8.6" "jupyterlite-xeus" jupyter-server
-
-      - run: |
+      # 2. Compilar forzando el uso exclusivo del entorno micromamba activo
+      - name: Build JupyterLite
+        shell: bash -l {0}
+        run: |
           jupyter lite build \
             --contents contents \
             --output-dir _output \
             --XeusAddon.environment_file=environment.yml
 
+      # 3. Publicar el resultado final en GitHub Pages
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _output
