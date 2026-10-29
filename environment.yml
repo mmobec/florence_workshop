@@ -1,14 +1,17 @@
-  name: optimization-notebook
+name: optimization-notebook
+
 channels:
   - https://prefix.dev/emscripten-forge-4x
   - https://prefix.dev/conda-forge
+
 dependencies:
   - xeus-python
   - numpy
   - pandas
   - scipy
-  - openpyxl>=3.1.5
+  - "openpyxl>=3.1.5"
   - pyscipopt
   - pip
   - pip:
+      - pyomo
       - scentree
