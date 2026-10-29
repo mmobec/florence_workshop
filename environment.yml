@@ -9,7 +9,7 @@ dependencies:
   - numpy
   - pandas
   - scipy
-  - "openpyxl>=3.1.5"
+  - openpyxl
   - pyscipopt
   - pip
   - pip:
