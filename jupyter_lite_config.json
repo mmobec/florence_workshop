@@ -1,9 +1,10 @@
+
 {
   "PyodideLockAddon": {
     "enabled": true,
     "specs": [
       "pyomo",
-      "highspy",
+      "highspy==1.13.1",
       "scentree"
     ]
   }
