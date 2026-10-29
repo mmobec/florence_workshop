@@ -1,4 +1,4 @@
-name: optimization-notebook
+  name: optimization-notebook
 channels:
   - https://prefix.dev/emscripten-forge-4x
   - https://prefix.dev/conda-forge
@@ -7,7 +7,7 @@ dependencies:
   - numpy
   - pandas
   - scipy
-  - openpyxl
+  - openpyxl>=3.1.5
   - pyscipopt
   - pip
   - pip:
