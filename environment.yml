@@ -1,16 +1,13 @@
-name: optimization-notebook
+name: florence-workshop
 
 channels:
   - https://prefix.dev/emscripten-forge-4x
   - https://prefix.dev/conda-forge
 
 dependencies:
+  - python
   - xeus-python
-  - numpy
+  - pyomo
+  - highspy
   - pandas
-  - scipy
   - openpyxl
-  - pyscipopt
-  - pip
-  - pip:
-      - scentree
