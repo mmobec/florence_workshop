@@ -3,7 +3,8 @@
     "enabled": true,
     "specs": [
       "pyomo",
-      "scentree"
+      "scentree",
+      "openpyxl"
     ]
   }
 }
