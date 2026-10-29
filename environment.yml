@@ -5,7 +5,5 @@ channels:
 dependencies:
   - python
   - xeus-python
-  - pyomo
-  - highspy
   - pandas
   - openpyxl
