@@ -19,19 +19,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 1. Configurar Micromamba asignando obligatoriamente un nombre al entorno
       - uses: mamba-org/setup-micromamba@v2
         with:
           micromamba-version: "latest"
           init-shell: bash
-          environment-name: jupyterlite-env # <--- Esto soluciona el error
-          create-args: >-
-            python=3.11
-            jupyterlite-core=0.8.6
-            jupyterlite-xeus
-            jupyter-server
+          environment-name: jupyterlite-env
+          create-args: python=3.11 jupyterlite-core=0.8.6 jupyterlite-xeus jupyter_server
 
-      # 2. Compilar JupyterLite usando el entorno activo
       - name: Build JupyterLite
         shell: bash -l {0}
         run: |
@@ -40,7 +34,6 @@ jobs:
             --output-dir _output \
             --XeusAddon.environment_file=environment.yml
 
-      # 3. Publicar el resultado final en GitHub Pages
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _output
