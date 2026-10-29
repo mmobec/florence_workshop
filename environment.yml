@@ -9,4 +9,6 @@ dependencies:
   - highspy
   - pandas
   - openpyxl
-  - scentree
+  - pip
+  - pip:
+      - scentree
