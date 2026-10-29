@@ -6,10 +6,11 @@ dependencies:
   - xeus-python
   - numpy
   - pandas
+  - scipy
   - openpyxl
-  - pyomo
-  - highspy
   - pyscipopt
   - pip
   - pip:
+      - pyomo
+      - highspy
       - scentree
