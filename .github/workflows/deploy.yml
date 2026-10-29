@@ -19,18 +19,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 1. Configurar Micromamba instalando de forma nativa jupyterlite
+      # 1. Configurar Micromamba asignando obligatoriamente un nombre al entorno
       - uses: mamba-org/setup-micromamba@v2
         with:
           micromamba-version: "latest"
           init-shell: bash
+          environment-name: jupyterlite-env # <--- Esto soluciona el error
           create-args: >-
             python=3.11
             jupyterlite-core=0.8.6
             jupyterlite-xeus
             jupyter-server
 
-      # 2. Compilar forzando el uso exclusivo del entorno micromamba activo
+      # 2. Compilar JupyterLite usando el entorno activo
       - name: Build JupyterLite
         shell: bash -l {0}
         run: |
