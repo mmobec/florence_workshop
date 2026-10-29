@@ -3,12 +3,7 @@
     "enabled": true,
     "specs": [
       "pyomo",
-      "highspy==1.13.1",
       "scentree"
-    ],
-    "uv_args": [
-      "--extra-index-url",
-      "https://index.pyodide.org/314.0.6/"
     ]
   }
 }
